@@ -40,8 +40,11 @@ Add few self-help book recommendations
         return f"Error: {e}"
 st.set_page_config(page_title="Quick Mood Lifter", page_icon="🌈", layout="centered")
 st.title("🧘‍♂️ CheerifAI")
-st.subheader("Instant mood boosts powered by AI. Personalized, uplifting moments designed to brighten your day and enhance your well-being.")
-
+st.markdown("""
+    <p style="font-size: 14px; color: grey;">
+        Instant mood boosts powered by AI. Personalized, uplifting moments designed to brighten your day and enhance your well-being.
+    </p>
+    """, unsafe_allow_html=True)
 
 age = st.number_input("Enter your age:", min_value=5, max_value=100, step=1, value=5)
 mood = st.selectbox("How are you feeling right now?", ["","Happy", "Sad", "Stressed", "Anxious", "Overwhelmed", "Tired", "Excited", "Bored", "Lonely", "Motivated"])
