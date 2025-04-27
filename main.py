@@ -12,6 +12,7 @@ User details:
 - Mood: {mood}
 - Time available: {time_available} minutes.
 The micro-therapy excercise should suit the above age, mood, time available
+Add few self-help book recommendations
 """
     
     headers = {
@@ -38,7 +39,9 @@ The micro-therapy excercise should suit the above age, mood, time available
     except Exception as e:
         return f"Error: {e}"
 st.set_page_config(page_title="Quick Mood Lifter", page_icon="🌈", layout="centered")
-st.title("🌈 Quick Mood Lifter")
+st.title("🧘‍♂️ CheerifAI")
+st.subheader("Instant mood boosts powered by AI. Personalized, uplifting moments designed to brighten your day and enhance your well-being.")
+
 
 age = st.number_input("Enter your age:", min_value=5, max_value=100, step=1, value=5)
 mood = st.selectbox("How are you feeling right now?", ["","Happy", "Sad", "Stressed", "Anxious", "Overwhelmed", "Tired", "Excited", "Bored", "Lonely", "Motivated"])
