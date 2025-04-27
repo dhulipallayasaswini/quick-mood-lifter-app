@@ -38,7 +38,7 @@ Add few self-help book recommendations
             return "No suggestion found. Please try again."
     except Exception as e:
         return f"Error: {e}"
-st.set_page_config(page_title="Quick Mood Lifter", page_icon="🌈", layout="centered")
+st.set_page_config(page_title="Quick Mood Lifter", page_icon="🧘‍♂️", layout="centered")
 st.title("🧘‍♂️ CheerifAI")
 st.markdown("""
     <p style="font-size: 14px; color: grey;">
