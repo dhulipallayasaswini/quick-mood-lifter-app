@@ -38,3 +38,21 @@ Sometimes add a light joke or a positive motivational quote at the end in quotat
             return "No suggestion found. Please try again."
     except Exception as e:
         return f"Error: {e}"
+st.set_page_config(page_title="Quick Mood Lifter", page_icon="🌈", layout="centered")
+st.title("🌈 Quick Mood Lifter")
+
+age = st.number_input("Enter your age:", min_value=5, max_value=100, step=1)
+mood = st.selectbox("How are you feeling right now?", ["Happy", "Sad", "Stressed", "Anxious", "Overwhelmed", "Tired", "Excited", "Bored", "Lonely", "Motivated"])
+time_available = st.selectbox("How much time can you spend on yourself right now?", ["2 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes"])
+
+if st.button("Get My Therapy Tip"):
+    if age and mood and time_available:
+        with st.spinner("Finding the perfect lift for you..."):
+            output = get_mood_lifter(age, mood, time_available)
+        st.success("Here’s your quick boost!")
+        st.write(output)
+    else:
+        st.warning("Please fill out all fields.")
+
+st.markdown("---")
+st.caption("Powered by Together.ai LLM • Built with Streamlit • Hosted on Render")
