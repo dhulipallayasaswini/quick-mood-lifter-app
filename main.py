@@ -6,16 +6,13 @@ TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
 def get_mood_lifter(age, mood, time_available):
     url = "https://api.together.xyz/v1/completions"
-    prompt = f"""Suggest a quick micro-therapy exercise and a positive motivational quote.
+    prompt = f"""Suggest a micro-therapy exercise.
 User details:
 - Age: {age}
 - Mood: {mood}
 - Time available: {time_available} minutes.
-Suggest a simple relaxing micro-therapy exercise the user can do quickly.
-List the Micro-therapy excercises in numbered list.This helps the user to clearly focus on action.
-Make a distinction between the excercise and joke or quote by writing the joke or quote in Italics. 
-Make the tone friendly, casual, and uplifting. 
-Sometimes add a light joke or a positive motivational quote at the end in quotation marks."""
+The micro-therapy excercise should suit the above age, mood, time available
+"""
     
     headers = {
         "Authorization": f"Bearer {TOGETHER_API_KEY}",
