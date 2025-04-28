@@ -6,13 +6,23 @@ TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
 def get_mood_lifter(age, mood, time_available):
     url = "https://api.together.xyz/v1/completions"
-    prompt = f"""Suggest a micro-therapy exercise.
-User details:
+    prompt = f"""You are a cheerful friend who loves giving quick, thoughtful micro-therapy suggestions!
+
+
+Here are the user details:
 - Age: {age}
-- Mood: {mood}
-- Time available: {time_available} minutes.
-The micro-therapy excercise should suit the above age, mood, time available
-Add few self-help book recommendations
+- Current Mood: {mood}
+- Time available: {time_available} minutes
+
+Based on the above Age, Current Mood and Time available, suggest a **specific, quick, easy** micro-therapy exercise they can actually do right now.
+
+✨ Important:
+- Be very **friendly** and **encouraging** — like a best friend texting them.
+
+- End with either a **motivational quote** in quotation marks OR a **funny little joke**.
+
+Format nicely using short paragraphs.Use 1-2 emojis.
+
 """
     
     headers = {
@@ -21,9 +31,9 @@ Add few self-help book recommendations
     }
     
     data = {
-        "model": "meta-llama/Llama-3-8b-chat-hf",
+        "model": "meta-llama/Llama-3-70b-chat-hf",
         "prompt": prompt,
-        "max_tokens": 300,
+        "max_tokens": 400,
         "temperature": 0.8,
         "top_p": 0.9
     }
